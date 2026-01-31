@@ -1,0 +1,131 @@
+.task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Animation for task items */
+.task-item-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.task-item-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.task-item-exit {
+  opacity: 1;
+}
+
+.task-item-exit-active {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Empty state */
+.task-list-empty {
+  text-align: center;
+  padding: 40px 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-list-empty p {
+  color: #6b7280;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Loading state */
+.task-list-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 200px;
+}
+
+/* Task list header */
+.task-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.task-list-header h2 {
+  color: #1f2937;
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.task-count {
+  font-size: 0.9rem;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-weight: 500;
+}
+
+/* Status indicators */
+.status-indicators {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.8rem;
+  color: #6b7280;
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.status-dot.pending {
+  background-color: #fbbf24;
+}
+
+.status-dot.in-progress {
+  background-color: #3b82f6;
+}
+
+.status-dot.completed {
+  background-color: #10b981;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .task-list-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .task-list {
+    gap: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .task-list-header h2 {
+    font-size: 1.3rem;
+  }
+  
+  .status-indicators {
+    justify-content: flex-start;
+  }
+}
